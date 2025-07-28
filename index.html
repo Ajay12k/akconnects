@@ -3,56 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AK Connects – Connecting you with the best content via Telegram, WhatsApp, Instagram, and YouTube." />
+  <meta name="description" content="AK Connects – Your guide for interviews, coding, and placement preparation." />
   <title>AK Connects – For You</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: #0f2027;
       color: #fff;
+      scroll-behavior: smooth;
+    }
+
+    /* Animated Gradient Background */
+    .hero-bg {
+      background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #1e3c72);
+      background-size: 800% 800%;
+      animation: gradientMove 20s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.8);
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      padding: 40px 20px;
+      padding: 10px 20px;
+      border-bottom: 1px solid #00d4ff;
+      backdrop-filter: blur(5px);
     }
 
-    img.logo {
-      width: 180px;
-      max-width: 100%;
-      border-radius: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+    nav .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
       color: #00d4ff;
     }
 
-    p {
-      font-size: 1.1rem;
+    nav .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 8px 12px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      background: #00d4ff;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      height: 100%;
+      width: 250px;
+      background: rgba(0, 0, 0, 0.95);
+      transition: right 0.3s ease;
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      z-index: 999;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: #00d4ff;
+      color: #000;
+    }
+
+    .sidebar.active {
+      right: 0;
+    }
+
+    /* Scroll Animations */
+    section, header, .footer {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero Section */
+    header {
       text-align: center;
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header img.logo {
+      width: 150px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #00d4ff;
+      margin: 20px 0 10px;
+    }
+
+    header p {
       max-width: 600px;
-      margin-bottom: 30px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      color: #ddd;
     }
 
     .socials {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
+      gap: 15px;
+      margin: 25px 0;
     }
 
     .socials a {
       text-decoration: none;
+      padding: 10px 18px;
       color: white;
       background: #1c1c1c;
-      padding: 12px 20px;
-      border-radius: 10px;
-      border: 1px solid #333;
+      border: 1px solid #00d4ff;
+      border-radius: 8px;
       transition: 0.3s;
     }
 
@@ -63,94 +186,220 @@
 
     /* Services Section */
     .services-section {
-      max-width: 1000px;
-      width: 100%;
-      margin-top: 40px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .services-section h2 {
+      font-size: 2.2rem;
       color: #00d4ff;
-      margin-bottom: 20px;
-      font-size: 2rem;
+      margin-bottom: 30px;
     }
 
     .service-columns {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
     }
 
     .service-column {
       flex: 1 1 250px;
+      max-width: 300px;
       background: rgba(0, 0, 0, 0.5);
       padding: 20px;
       border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
       border: 1px solid #00d4ff;
+      transition: transform 0.3s, background 0.3s;
+      cursor: pointer;
     }
 
     .service-column:hover {
-      background: rgba(0, 212, 255, 0.2);
+      transform: translateY(-5px);
+      background: rgba(0, 212, 255, 0.15);
     }
 
     .service-column h3 {
-      margin-bottom: 10px;
-      font-size: 1.3rem;
       color: #00d4ff;
+      margin-bottom: 10px;
     }
 
     .service-details {
       display: none;
       font-size: 0.95rem;
-      color: #ddd;
+      color: #ccc;
       margin-top: 10px;
+      line-height: 1.5;
     }
 
+    /* Testimonials */
+    .testimonials {
+      padding: 60px 20px;
+      background: rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      color: #00d4ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .testimonial-card {
+      max-width: 500px;
+      margin: 0 auto 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      border: 1px solid #00d4ff;
+      font-style: italic;
+      color: #ddd;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      color: #00d4ff;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    form button {
+      background: #00d4ff;
+      border: none;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #000;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #00aacc;
+    }
+
+    /* Footer */
     .footer {
-      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
       font-size: 0.9rem;
       color: #aaa;
-      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .service-columns {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-<body>
-  <img src="logo.jpg" alt="AK Connects Logo" class="logo" />
-  <h1>AK Connects</h1>
-  <p>Connecting You with the Best Content – Telegram, WhatsApp, Instagram & YouTube.</p>
+<body class="hero-bg">
+  <!-- Navigation -->
+  <nav>
+    <div class="logo-text">AK Connects</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hamburger" onclick="toggleSidebar()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
 
-  <div class="socials">
-    <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
-    <a href="https://t.me/RisingTeam1" target="_blank" rel="noopener noreferrer">Telegram Channel</a>
-    <a href="https://www.instagram.com/akconnectsforyou1?igsh=djh3OWs0dDhsMmNz" target="_blank" rel="noopener noreferrer">Instagram Page</a>
-    <a href="https://youtube.com/@coderrr27?si=4MTKbTv5Pin-2oMy" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
+  <!-- Sidebar for mobile -->
+  <div class="sidebar" id="sidebar">
+    <a href="#home" onclick="toggleSidebar()">Home</a>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#testimonials" onclick="toggleSidebar()">Testimonials</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
   </div>
 
+  <!-- Hero Section -->
+  <header id="home">
+    <img src="logo.jpg" alt="AK Connects Logo" class="logo" />
+    <h1>AK Connects</h1>
+    <p>Your guide for Interview Prep, Coding Challenges & Placement Success.</p>
+    <div class="socials">
+      <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">WhatsApp</a>
+      <a href="https://t.me/RisingTeam1" target="_blank">Telegram</a>
+      <a href="https://www.instagram.com/akconnectsforyou1?igsh=djh3OWs0dDhsMmNz" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@coderrr27?si=4MTKbTv5Pin-2oMy" target="_blank">YouTube</a>
+    </div>
+  </header>
+
   <!-- Services Section -->
-  <div class="services-section">
+  <section id="services" class="services-section">
     <h2>Our Services</h2>
     <div class="service-columns">
       <div class="service-column" onclick="toggleService(0)">
         <h3>Interview Help</h3>
-        <div class="service-details">Mock interviews, resume tips, and HR round preparation.</div>
+        <div class="service-details">Mock interviews, resume reviews, HR & technical interview preparation.</div>
       </div>
       <div class="service-column" onclick="toggleService(1)">
         <h3>Coding Help</h3>
-        <div class="service-details">DSA, coding challenges, and debugging support.</div>
+        <div class="service-details">Hands-on DSA, coding challenges, problem-solving sessions & debugging support.</div>
       </div>
       <div class="service-column" onclick="toggleService(2)">
         <h3>All Placement Exams</h3>
-        <div class="service-details">Aptitude tests, reasoning, and company-specific preparation.</div>
+        <div class="service-details">Aptitude tests, reasoning, company-specific test prep, and study materials.</div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-card">"AK Connects helped me crack my first interview with their mock sessions!"</div>
+    <div class="testimonial-card">"Their coding challenges improved my problem-solving speed by 2x."</div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
   <div class="footer">
-    © 2025 AK Connects – Made with ❤<br>
-    Built by Ajay Kumar
+    © 2025 AK Connects – Made with ❤ | Built by Ajay Kumar
   </div>
 
   <script>
@@ -158,6 +407,25 @@
       const details = document.querySelectorAll('.service-details');
       details.forEach((el, i) => el.style.display = (i === index && el.style.display !== 'block') ? 'block' : 'none');
     }
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+
+    // Scroll Animation Trigger
+    const sections = document.querySelectorAll("section, header, .footer");
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < windowHeight - 50) {
+          section.style.animationPlayState = "running";
+        }
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
   </script>
 </body>
 </html>
