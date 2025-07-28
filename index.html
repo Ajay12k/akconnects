@@ -9,8 +9,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: white;
-      color: black;
+      background: #000;
+      color: white;
       overflow-x: hidden;
     }
 
@@ -18,24 +18,24 @@
       position: sticky; top: 0; z-index: 1000;
       display: flex; justify-content: space-between; align-items: center;
       padding: 15px 25px;
-      background: white;
-      border-bottom: 2px solid #00bfff;
+      background: #000;
+      border-bottom: 2px solid #8a2be2;
     }
 
     nav .logo-text {
       font-size: 1.8rem; font-weight: bold;
-      color: #00bfff;
+      color: #8a2be2;
     }
 
     nav .nav-links a {
-      color: black;
+      color: white;
       text-decoration: none; margin: 0 12px;
       position: relative;
       font-weight: bold;
     }
     nav .nav-links a::after {
       content: ''; position: absolute; bottom: -5px; left: 0;
-      width: 0; height: 2px; background: #00bfff; transition: 0.3s;
+      width: 0; height: 2px; background: #8a2be2; transition: 0.3s;
     }
     nav .nav-links a:hover::after { width: 100%; }
 
@@ -46,7 +46,7 @@
 
     header img.logo {
       width: 160px; border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
       animation: floatLogo 3s ease-in-out infinite;
     }
 
@@ -57,13 +57,13 @@
 
     header h1 {
       font-size: 2.8rem;
-      color: black;
+      color: #fff;
       margin-top: 20px;
     }
 
     .typing-text {
       font-size: 1.3rem; margin-top: 15px;
-      color: #00bfff;
+      color: #8a2be2;
     }
     .typing-text::after {
       content: '|';
@@ -76,50 +76,50 @@
 
     .socials {
       margin-top: 25px;
-      display: flex; gap: 15px; justify-content: center;
+      display: flex; gap: 12px; justify-content: center;
       flex-wrap: wrap;
     }
 
     .socials a {
-      text-decoration: none; padding: 10px 18px;
+      text-decoration: none; padding: 10px 16px;
       color: white;
-      background: #00bfff;
+      background: #8a2be2;
       border-radius: 6px;
       transition: 0.4s;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .socials a:hover {
       transform: scale(1.1);
-      background: black;
+      background: white;
+      color: #000;
     }
 
     .tip-box {
       margin: 30px auto; padding: 20px;
       max-width: 600px;
-      background: #f0faff;
+      background: #1a1a1a;
+      border-left: 5px solid #8a2be2;
       border-radius: 10px;
-      border-left: 5px solid #00bfff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
       font-weight: bold;
-      color: black;
+      color: #e5e5ff;
+      box-shadow: 0 0 10px rgba(138,43,226,0.4);
     }
 
     .contact-section {
       padding: 50px 20px;
       text-align: center;
-      background: white;
+      background: #000;
       margin-top: 30px;
     }
 
     .contact-section h2 {
-      font-size: 2rem; color: black;
+      font-size: 2rem; color: white;
     }
 
     .telegram-link {
       font-size: 1.3rem;
       display: inline-block;
-      color: #00bfff;
+      color: #8a2be2;
       text-decoration: none;
       margin-top: 10px;
     }
@@ -132,10 +132,10 @@
 
     .fab-btn {
       width: 55px; height: 55px; border-radius: 50%;
-      background: #00bfff; color: white;
+      background: #8a2be2; color: white;
       display: flex; align-items: center; justify-content: center;
       font-size: 28px; cursor: pointer;
-      box-shadow: 0 0 10px #00bfff;
+      box-shadow: 0 0 10px #8a2be2;
     }
 
     .fab-links { display: none; flex-direction: column; gap: 6px; }
@@ -153,7 +153,7 @@
 
     #scrollTopBtn {
       position: fixed; bottom: 20px; right: 80px;
-      background: #00bfff; color: white;
+      background: #8a2be2; color: white;
       border: none; padding: 12px 14px;
       border-radius: 50%;
       font-size: 20px; cursor: pointer;
@@ -163,9 +163,9 @@
     footer {
       text-align: center;
       padding: 15px;
-      background: #f1f1f1;
+      background: #111;
       font-size: 0.9rem;
-      color: #333;
+      color: #bbb;
     }
   </style>
 </head>
@@ -187,8 +187,8 @@
     <div class="socials">
       <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">WhatsApp</a>
       <a href="https://t.me/RisingTeam1" target="_blank">Telegram</a>
-      <a href="https://www.instagram.com/akconnectsforyou1?igsh=djh3OWs0dDhsMmNz" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@coderrr27?si=4MTKbTv5Pin-2oMy" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com/akconnectsforyou1" target="_blank">Instagram</a>
+      <a href="https://youtube.com/@coderrr27" target="_blank">YouTube</a>
     </div>
   </header>
 
@@ -231,7 +231,6 @@
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
-    // Typing Text
     const textArray = ["Interview Help", "Coding Help", "Placement Exams", "Daily Tips"];
     let textIndex = 0, charIndex = 0;
     const typingText = document.getElementById("typingText");
@@ -259,7 +258,6 @@
 
     document.addEventListener("DOMContentLoaded", () => typeText());
 
-    // Random Tip
     const tips = [
       "Tip: Use clear, meaningful variable names.",
       "Tip: Practice 1 DSA problem daily.",
