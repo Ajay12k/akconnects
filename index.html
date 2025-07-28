@@ -9,45 +9,33 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #e0f7fa, #ffffff, #e1f5fe, #ffffff);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #000;
+      background: white;
+      color: black;
       overflow-x: hidden;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     nav {
       position: sticky; top: 0; z-index: 1000;
       display: flex; justify-content: space-between; align-items: center;
       padding: 15px 25px;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(6px);
-      border-bottom: 2px solid #ccc;
+      background: white;
+      border-bottom: 2px solid gold;
     }
+
     nav .logo-text {
       font-size: 1.8rem; font-weight: bold;
-      background: linear-gradient(90deg, #0077cc, #00bcd4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 3s linear infinite;
+      color: gold;
     }
-    @keyframes shine {
-      0% { background-position: 0%; }
-      100% { background-position: 200%; }
-    }
+
     nav .nav-links a {
-      color: #0077cc; text-decoration: none; margin: 0 12px;
+      color: black;
+      text-decoration: none; margin: 0 12px;
       position: relative;
       font-weight: bold;
     }
     nav .nav-links a::after {
       content: ''; position: absolute; bottom: -5px; left: 0;
-      width: 0; height: 2px; background: #00bcd4; transition: 0.3s;
+      width: 0; height: 2px; background: gold; transition: 0.3s;
     }
     nav .nav-links a:hover::after { width: 100%; }
 
@@ -55,24 +43,26 @@
       text-align: center;
       padding: 100px 20px 60px;
     }
+
     header img.logo {
       width: 160px; border-radius: 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      transform: translateY(0);
       animation: floatLogo 3s ease-in-out infinite;
     }
     @keyframes floatLogo {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
+
     header h1 {
       font-size: 2.8rem;
-      color: #0077cc;
+      color: black;
       margin-top: 20px;
     }
+
     .typing-text {
       font-size: 1.3rem; margin-top: 15px;
-      color: #333;
+      color: gold;
     }
     .typing-text::after {
       content: '|';
@@ -87,40 +77,49 @@
       margin-top: 25px;
       display: flex; gap: 15px; justify-content: center;
     }
+
     .socials a {
-      text-decoration: none; padding: 10px 18px; color: #fff;
-      background: #0077cc;
+      text-decoration: none; padding: 10px 18px;
+      color: white;
+      background: gold;
       border-radius: 6px;
       transition: 0.4s;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     .socials a:hover {
       transform: scale(1.1);
-      background: #00bcd4;
+      background: black;
     }
 
     .tip-box {
       margin: 30px auto; padding: 20px;
       max-width: 600px;
-      background: #f1f8ff;
+      background: #fff8dc;
       border-radius: 10px;
-      border-left: 5px solid #00bcd4;
+      border-left: 5px solid gold;
       box-shadow: 0 0 15px rgba(0,0,0,0.05);
       font-weight: bold;
+      color: black;
     }
 
     .contact-section {
       padding: 50px 20px;
       text-align: center;
-      background: #e0f7fa;
+      background: white;
       margin-top: 30px;
     }
+
     .contact-section h2 {
-      font-size: 2rem; color: #0077cc;
+      font-size: 2rem; color: black;
     }
+
     .telegram-link {
-      font-size: 1.3rem; display: inline-block; color: #0077cc;
-      text-decoration: none; margin-top: 10px;
+      font-size: 1.3rem;
+      display: inline-block;
+      color: gold;
+      text-decoration: none;
+      margin-top: 10px;
     }
 
     .fab-container {
@@ -128,27 +127,31 @@
       display: flex; flex-direction: column; gap: 8px;
       align-items: center; z-index: 1000;
     }
+
     .fab-btn {
       width: 55px; height: 55px; border-radius: 50%;
-      background: #00bcd4; color: #fff;
+      background: gold; color: white;
       display: flex; align-items: center; justify-content: center;
       font-size: 28px; cursor: pointer;
-      box-shadow: 0 0 10px #00bcd4;
+      box-shadow: 0 0 10px gold;
     }
+
     .fab-links { display: none; flex-direction: column; gap: 10px; }
     .fab-container.active .fab-links { display: flex; }
+
     .fab-links a {
       width: 45px; height: 45px; border-radius: 50%;
       background-size: cover;
       display: flex; align-items: center; justify-content: center;
     }
+
     .fab-links .whatsapp { background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') center/cover no-repeat; background-color: white; }
     .fab-links .instagram { background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') center/cover no-repeat; }
-    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: #0088cc; }
+    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: white; }
 
     #scrollTopBtn {
       position: fixed; bottom: 20px; right: 80px;
-      background: #00bcd4; color: #fff;
+      background: gold; color: white;
       border: none; padding: 12px 14px;
       border-radius: 50%;
       font-size: 20px; cursor: pointer;
@@ -160,7 +163,7 @@
       padding: 15px;
       background: #f1f1f1;
       font-size: 0.9rem;
-      color: #666;
+      color: #333;
     }
   </style>
 </head>
@@ -216,10 +219,12 @@
     function toggleFab() {
       document.getElementById('fab').classList.toggle('active');
     }
+
     const scrollBtn = document.getElementById("scrollTopBtn");
     window.onscroll = function() {
       scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
     };
+
     function scrollToTop() {
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
@@ -238,6 +243,7 @@
         setTimeout(eraseText, 1500);
       }
     }
+
     function eraseText() {
       if (charIndex > 0) {
         typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
@@ -248,8 +254,10 @@
         setTimeout(typeText, 500);
       }
     }
+
     document.addEventListener("DOMContentLoaded", () => typeText());
 
+    // Random Tip
     const tips = [
       "Tip: Use clear, meaningful variable names.",
       "Tip: Practice 1 DSA problem daily.",
@@ -261,5 +269,3 @@
   </script>
 </body>
 </html>
-
-
