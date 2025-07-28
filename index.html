@@ -1,225 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Connects</title>
+  <title>AK Connects - Marvel Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #ff4d4d;
-      --bg-color: #ffffff;
-      --text-color: #333;
-      --accent-color: #f2f2f2;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
-
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      padding: 20px;
     }
-
     header {
-      background: var(--primary-color);
-      color: white;
-      padding: 1rem 2rem;
       text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
+      margin-bottom: 20px;
     }
-
-    section.tips {
-      margin: 2rem auto;
+    header h1 {
+      font-size: 3rem;
+      color: #e23636;
+    }
+    .tips-section {
+      margin: 20px auto;
       max-width: 600px;
-      background: var(--accent-color);
-      padding: 1.5rem;
+      background: #1c1c1c;
+      padding: 20px;
       border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
       text-align: center;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
-
-    section.tips h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--primary-color);
+    .tips-section h2 {
+      margin-bottom: 10px;
+      color: #ffffff;
     }
-
-    section.tips p {
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
+    .tip {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      transition: opacity 0.4s ease-in-out;
     }
-
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #999;
+    }
     .social-icons {
-      margin-top: 2rem;
       display: flex;
       justify-content: center;
       gap: 20px;
+      margin-top: 20px;
     }
-
     .social-icons a {
-      color: var(--primary-color);
-      font-size: 1.8rem;
       text-decoration: none;
-      transition: transform 0.3s;
+      font-size: 1.8rem;
+      color: #e23636;
+      transition: color 0.3s;
     }
-
     .social-icons a:hover {
-      transform: scale(1.2);
-    }
-
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      font-size: 1rem;
-      color: var(--text-color);
-      background-color: var(--accent-color);
-      padding: 1rem;
+      color: #ffffff;
     }
   </style>
 </head>
-
 <body>
   <header>
-    Welcome to AK Connects
+    <h1>AK Connects 🚀</h1>
   </header>
 
-  <section class="tips">
-    <h2>🔥 Daily Tips & Tricks</h2>
-    <p id="tipBox">Loading...</p>
-  </section>
+  <div class="tips-section">
+    <h2>🔥 Daily Coding & Interview Tips</h2>
+    <div class="tip" id="tip-box">Loading tip...</div>
+  </div>
 
   <div class="social-icons">
-    <a href="https://t.me/Coderrr27" target="_blank">Telegram</a>
-    <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
-    <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+    <a href="https://t.me/Coderrr27" target="_blank">📲 Telegram</a>
+    <a href="https://www.instagram.com" target="_blank">📸 Instagram</a>
+    <a href="https://wa.me/" target="_blank">💬 WhatsApp</a>
   </div>
 
   <footer>
-    Powered by @Coderrr27 | Crafted with ❤️
+    <p>Made with ❤️ by AK. Stay connected, stay sharp.</p>
   </footer>
 
   <script>
     const tips = [
-      "Stay consistent with your learning.",
-      "Solve one coding problem every day.",
-      "Practice mock interviews regularly.",
-      "Keep your resume updated.",
-      "Focus on problem-solving patterns.",
-      "Contribute to open-source projects.",
-      "Use GitHub to showcase your code.",
-      "Document your projects clearly.",
-      "Stay active on LinkedIn.",
-      "Build a personal brand.",
-      "Practice system design questions.",
-      "Master data structures and algorithms.",
-      "Learn a backend framework.",
-      "Get comfortable with APIs.",
-      "Use version control in all projects.",
-      "Follow tech news and trends.",
-      "Attend hackathons and meetups.",
-      "Build portfolio projects that solve real problems.",
-      "Ask for feedback often.",
-      "Refactor old code.",
-      "Automate daily tasks.",
-      "Write clean, readable code.",
-      "Use proper naming conventions.",
-      "Write unit tests.",
-      "Understand how the web works.",
-      "Master at least one programming language.",
-      "Stay curious.",
-      "Don’t fear rejection, keep applying.",
-      "Work on soft skills.",
-      "Improve communication.",
-      "Solve LeetCode challenges.",
-      "Use debugging tools effectively.",
-      "Learn SQL and database design.",
-      "Try freelance projects.",
-      "Understand cloud basics.",
-      "Familiarize with DevOps tools.",
-      "Practice time management.",
-      "Always backup your work.",
-      "Use Notion or Trello for planning.",
-      "Understand OS fundamentals.",
-      "Stay motivated through setbacks.",
-      "Build a blog.",
+      "Always dry run your code.",
+      "Understand time and space complexity.",
+      "Practice DSA every day.",
+      "Build real-world projects.",
+      "Read source code of open-source projects.",
+      "Use Git & GitHub to showcase work.",
+      "Master one programming language first.",
+      "Be consistent, not perfect.",
+      "Debug with print statements initially.",
+      "Ask questions during interviews.",
+      "Focus on core subjects like OS, DBMS, CN.",
+      "Use LeetCode/GeeksforGeeks for prep.",
+      "Read problem constraints carefully.",
+      "Practice mock interviews.",
+      "Write clean and readable code.",
+      "Comment your logic when needed.",
+      "Be ready to explain your project end-to-end.",
+      "Know the basics of system design.",
+      "Participate in hackathons.",
+      "Improve soft skills along with tech skills.",
+      "Be honest in interviews.",
+      "Have a strong LinkedIn profile.",
+      "Practice behavioral questions.",
+      "Know the STAR method for HR rounds.",
+      "Follow tech YouTubers and blogs.",
+      "Update your resume regularly.",
+      "Use ChatGPT to debug, not solve.",
+      "Track your progress weekly.",
+      "Be curious. Google everything.",
+      "Practice SQL queries hands-on.",
+      "Have at least 2 solid projects.",
+      "Stay calm under pressure.",
+      "Take breaks while coding.",
+      "Have a learning roadmap.",
+      "Contribute to GitHub discussions.",
       "Try pair programming.",
-      "Understand MVC architecture.",
-      "Learn to read documentation.",
-      "Keep your learning fun!",
-      "Get familiar with interview platforms.",
-      "Work on mini projects weekly.",
-      "Stay humble and hungry.",
-      "Teach others what you learn.",
-      "Record videos explaining code.",
-      "Make study groups.",
-      "Practice typing speed.",
-      "Challenge yourself with deadlines.",
-      "Learn design patterns.",
-      "Avoid tutorial hell.",
-      "Track your progress.",
-      "Try reverse engineering apps.",
-      "Start with small goals.",
-      "Celebrate small wins.",
-      "Use ChatGPT for learning support.",
-      "Ask doubts, never hesitate.",
-      "Break problems into parts.",
-      "Debug systematically.",
-      "Comment complex code.",
-      "Practice whiteboard coding.",
-      "Learn regex.",
-      "Try public speaking.",
-      "Always be building.",
-      "Design resumes smartly.",
-      "Network with alumni.",
-      "Use light/dark mode smartly.",
-      "Explore AI tools.",
-      "Be ethical in coding.",
-      "Avoid burnout.",
-      "Read others’ code.",
-      "Use keyboard shortcuts.",
-      "Join tech Discord servers.",
-      "Update your LinkedIn bio.",
-      "Create a coding calendar.",
-      "Learn Docker basics.",
-      "Follow startup culture.",
-      "Prepare HR answers.",
-      "Ace behavioral rounds.",
-      "Master GIT operations.",
-      "Mock projects like ecommerce site.",
-      "Track your hours using tools.",
-      "Read career blogs.",
-      "Design UI smartly.",
-      "Use Figma/Canva.",
-      "Stay organized.",
-      "Practice memory techniques.",
-      "Apply for internships.",
-      "Create personal portfolio site.",
-      "Write README files.",
-      "Make use of free courses.",
-      "Keep learning forever.",
-      "Use Pomodoro technique.",
-      "Take healthy breaks.",
-      "Love what you do!"
+      "Maintain a portfolio website.",
+      "Learn keyboard shortcuts.",
+      "Prepare for puzzle-based rounds.",
+      "Don’t memorize code — understand it.",
+      "Ask feedback after interviews.",
+      "Attend webinars and tech talks.",
+      "Use VS Code like a pro.",
+      "Make notes of interview experiences.",
+      "Stay updated with tech trends.",
+      "Don’t ignore communication rounds.",
+      "Write blogs to document learning.",
+      "Keep learning, never settle.",
+      "Sleep well before interviews.",
+      "Practice whiteboard coding."
     ];
 
-    const tipBox = document.getElementById('tipBox');
+    let tipBox = document.getElementById("tip-box");
     let index = 0;
 
     function showNextTip() {
-      tipBox.textContent = tips[index];
-      index = (index + 1) % tips.length;
+      tipBox.style.opacity = 0;
+      setTimeout(() => {
+        tipBox.textContent = tips[index];
+        tipBox.style.opacity = 1;
+        index = (index + 1) % tips.length;
+      }, 400);
     }
 
     showNextTip();
-    setInterval(showNextTip, 5000); // Change tip every 5 seconds
+    setInterval(showNextTip, 4000);
   </script>
 </body>
-
 </html>
 
