@@ -81,6 +81,20 @@
     }
     .socials a:hover { background: #002d4c; }
 
+    /* Coding Tip */
+    .tip-box {
+      margin: 30px auto;
+      padding: 15px 20px;
+      background: #f5f5f5;
+      color: #222;
+      border-left: 5px solid #ff4500;
+      border-radius: 8px;
+      max-width: 600px;
+      font-style: italic;
+      font-size: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
     /* Contact */
     .contact-section {
       padding: 50px 20px;
@@ -103,7 +117,7 @@
     .fab-btn {
       width: 55px; height: 55px; border-radius: 50%; background: #00416A; color: #fff;
       display: flex; align-items: center; justify-content: center;
-      font-size: 22px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      font-size: 28px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transition: 0.3s;
     }
     .fab-btn:hover { background: #002d4c; }
@@ -114,10 +128,13 @@
 
     .fab-links a {
       width: 45px; height: 45px; border-radius: 50%;
-      background: #0088cc; color: white; display: flex; align-items: center; justify-content: center;
+      background-size: cover;
+      color: white; display: flex; align-items: center; justify-content: center;
       font-size: 20px; text-decoration: none; transition: 0.3s;
     }
-    .fab-links a:hover { background: #006fa1; }
+    .fab-links .whatsapp { background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') center/cover no-repeat; }
+    .fab-links .instagram { background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') center/cover no-repeat; }
+    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: #0088cc; }
 
     /* Scroll-to-Top Button */
     #scrollTopBtn {
@@ -167,6 +184,9 @@
     </div>
   </header>
 
+  <!-- Daily Coding Tip -->
+  <div class="tip-box" id="codingTip"></div>
+
   <!-- Contact -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
@@ -176,9 +196,9 @@
   <!-- Floating Action Button (FAB) -->
   <div class="fab-container" id="fab">
     <div class="fab-links">
-      <a href="https://t.me/Coderrr27" target="_blank">✈</a>
-      <a href="https://www.instagram.com/akconnectsforyou1" target="_blank">📷</a>
-      <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">💬</a>
+      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank"></a>
+      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank"></a>
+      <a class="telegram" href="https://t.me/Coderrr27" target="_blank"></a>
     </div>
     <div class="fab-btn" onclick="toggleFab()">+</div>
   </div>
@@ -232,6 +252,16 @@
       }
     }
     document.addEventListener("DOMContentLoaded", () => typeText());
+
+    // Daily Coding Tip
+    const tips = [
+      "Tip: Always use meaningful variable names for clean code.",
+      "Tip: Solve at least one DSA problem every day.",
+      "Tip: Learn the basics of SQL joins – they are often asked in interviews.",
+      "Tip: Write comments for complex logic in your code.",
+      "Tip: Practice mock interviews to boost your confidence."
+    ];
+    document.getElementById("codingTip").textContent = tips[Math.floor(Math.random() * tips.length)];
   </script>
 </body>
 </html>
