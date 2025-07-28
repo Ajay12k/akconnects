@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AK Connects – Interview Prep, Coding & Placements." />
+  <meta name="description" content="AK Connects – Your hub for interviews, coding, and placements." />
   <title>AK Connects – For You</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #ffffff;
+      background: linear-gradient(135deg, #00416A, #E4E5E6);
       color: #222;
       scroll-behavior: smooth;
     }
@@ -24,24 +24,24 @@
       justify-content: space-between;
       align-items: center;
       padding: 12px 20px;
-      border-bottom: 2px solid #e63946;
+      border-bottom: 3px solid #00416A;
     }
-    nav .logo-text { font-size: 1.5rem; font-weight: bold; color: #e63946; }
+    nav .logo-text { font-size: 1.5rem; font-weight: bold; color: #00416A; }
     nav .nav-links { display: flex; gap: 20px; }
     nav .nav-links a {
       color: #222;
       text-decoration: none;
       font-size: 1rem;
       padding: 8px 12px;
-      transition: color 0.3s, background 0.3s;
       border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
     }
     nav .nav-links a:hover {
-      background: #e63946;
+      background: #00416A;
       color: #fff;
     }
     .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 5px; }
-    .hamburger div { width: 25px; height: 3px; background: #e63946; }
+    .hamburger div { width: 25px; height: 3px; background: #00416A; }
 
     /* Sidebar */
     .sidebar {
@@ -50,8 +50,8 @@
       right: -250px;
       height: 100%;
       width: 250px;
-      background: #fefefe;
-      border-left: 2px solid #e63946;
+      background: #fff;
+      border-left: 3px solid #00416A;
       transition: right 0.3s ease;
       padding-top: 60px;
       display: flex;
@@ -61,37 +61,38 @@
       z-index: 999;
     }
     .sidebar a {
-      color: #222;
+      color: #00416A;
       text-decoration: none;
       font-size: 1.1rem;
       padding: 8px 15px;
       border-radius: 5px;
       transition: 0.3s;
     }
-    .sidebar a:hover { background: #e63946; color: #fff; }
+    .sidebar a:hover { background: #00416A; color: #fff; }
     .sidebar.active { right: 0; }
 
     /* Hero Section */
     header {
       text-align: center;
-      padding: 70px 20px 40px;
-      background: #f7f7f7;
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
     }
     header img.logo {
       width: 140px;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     header h1 {
       font-size: 2.5rem;
-      color: #e63946;
+      color: #00416A;
       margin: 20px 0 10px;
     }
     header p {
       max-width: 600px;
       margin: 0 auto;
       font-size: 1.1rem;
-      color: #444;
+      color: #333;
     }
     .socials {
       display: flex;
@@ -104,72 +105,39 @@
       text-decoration: none;
       padding: 10px 18px;
       color: #fff;
-      background: #e63946;
+      background: #00416A;
       border-radius: 5px;
       transition: 0.3s;
     }
-    .socials a:hover { background: #b71c1c; }
-
-    /* Services Section */
-    .services-section {
-      padding: 50px 20px;
-      text-align: center;
-      background: #fff;
-    }
-    .services-section h2 {
-      font-size: 2rem;
-      color: #e63946;
-      margin-bottom: 30px;
-    }
-    .service-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .service-column {
-      flex: 1 1 250px;
-      max-width: 300px;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-    .service-column:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .service-column h3 { color: #e63946; margin-bottom: 8px; font-size: 1.2rem; }
-    .service-details { display: none; font-size: 0.95rem; color: #444; margin-top: 8px; }
+    .socials a:hover { background: #002d4c; }
 
     /* Contact */
     .contact-section {
       padding: 50px 20px;
       text-align: center;
-      background: #f7f7f7;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(6px);
     }
     .contact-section h2 {
-      color: #e63946;
+      color: #00416A;
       font-size: 2rem;
       margin-bottom: 15px;
     }
     .telegram-link {
       font-size: 1.2rem;
       display: inline-block;
-      color: #e63946;
+      color: #00416A;
       text-decoration: none;
       font-weight: bold;
     }
-    .telegram-link:hover { color: #b71c1c; }
+    .telegram-link:hover { color: #002d4c; }
 
     /* Scroll-to-Top Button */
     #scrollTopBtn {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: #e63946;
+      background: #00416A;
       color: #fff;
       border: none;
       padding: 10px 15px;
@@ -180,14 +148,11 @@
       transition: background 0.3s;
       z-index: 1000;
     }
-    #scrollTopBtn:hover { background: #b71c1c; }
+    #scrollTopBtn:hover { background: #002d4c; }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .service-columns { flex-direction: column; align-items: center; }
-      .service-column { max-width: 90%; padding: 15px; font-size: 0.9rem; }
-      .services-section h2 { font-size: 1.7rem; }
     }
   </style>
 </head>
@@ -197,7 +162,6 @@
     <div class="logo-text">AK Connects</div>
     <div class="nav-links">
       <a href="#home">Home</a>
-      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="hamburger" onclick="toggleSidebar()">
@@ -208,7 +172,6 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <a href="#home" onclick="toggleSidebar()">Home</a>
-    <a href="#services" onclick="toggleSidebar()">Services</a>
     <a href="#contact" onclick="toggleSidebar()">Contact</a>
   </div>
 
@@ -225,25 +188,6 @@
     </div>
   </header>
 
-  <!-- Services -->
-  <section id="services" class="services-section">
-    <h2>Our Services</h2>
-    <div class="service-columns">
-      <div class="service-column" onclick="toggleService(0)">
-        <h3>Interview Help</h3>
-        <div class="service-details">Mock interviews, resume reviews, HR & technical interview preparation.</div>
-      </div>
-      <div class="service-column" onclick="toggleService(1)">
-        <h3>Coding Help</h3>
-        <div class="service-details">Hands-on DSA, coding challenges, problem-solving sessions & debugging support.</div>
-      </div>
-      <div class="service-column" onclick="toggleService(2)">
-        <h3>All Placement Exams</h3>
-        <div class="service-details">Aptitude tests, reasoning, company-specific test prep, and study materials.</div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
@@ -254,10 +198,6 @@
   <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
   <script>
-    function toggleService(index) {
-      const details = document.querySelectorAll('.service-details');
-      details.forEach((el, i) => el.style.display = (i === index && el.style.display !== 'block') ? 'block' : 'none');
-    }
     function toggleSidebar() {
       document.getElementById('sidebar').classList.toggle('active');
     }
