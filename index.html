@@ -3,304 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AK Connects – Premium Edition with stunning UI and animations." />
-  <title>AK Connects – Marvel Edition</title>
+  <title>AK Connects</title>
   <style>
-    /* Reset and base styles */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(-45deg, #ff0022, #ff7f00, #ff0022, #ff4d4d);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: #fff;
-      overflow-x: hidden;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background: #f0f9ff;
+      color: #333;
     }
 
-    /* Navigation */
-    nav {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 25px;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(6px);
-      border-bottom: 2px solid rgba(255,255,255,0.2);
-    }
-    nav .logo-text {
-      font-size: 1.8rem; font-weight: bold;
-      background: linear-gradient(90deg, #fff, #ff0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 3s linear infinite;
-    }
-    @keyframes shine {
-      0% { background-position: 0%; }
-      100% { background-position: 200%; }
-    }
-    nav .nav-links a {
-      color: #fff; text-decoration: none; margin: 0 12px;
-      position: relative;
-    }
-    nav .nav-links a::after {
-      content: ''; position: absolute; bottom: -5px; left: 0;
-      width: 0; height: 2px; background: #ff0; transition: 0.3s;
-    }
-    nav .nav-links a:hover::after { width: 100%; }
-
-    /* Hero Section */
     header {
+      background: #87cefa;
+      color: white;
+      padding: 1.5rem;
       text-align: center;
-      padding: 100px 20px 60px;
-      backdrop-filter: blur(10px);
-    }
-    header img.logo {
-      width: 160px; border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-      transform: translateY(0);
-      animation: floatLogo 3s ease-in-out infinite;
-    }
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    header h1 {
-      font-size: 2.8rem;
-      text-shadow: 0 0 10px #ff0044, 0 0 20px #ff0044;
-      margin-top: 20px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin: 15px auto;
-      max-width: 600px;
-      color: #ffeaea;
-    }
-    .typing-text {
-      font-size: 1.3rem; margin-top: 15px;
-      color: #fff; text-shadow: 0 0 5px #ff0044;
-      position: relative;
-    }
-    .typing-text::after {
-      content: '|';
-      position: absolute;
-      right: -10px;
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50%, 100% { opacity: 0; }
     }
 
-    /* Social Links */
-    .socials {
-      margin-top: 25px;
-      display: flex; gap: 15px; justify-content: center;
-    }
-    .socials a {
-      text-decoration: none; padding: 10px 18px; color: #fff;
-      background: rgba(0,0,0,0.4);
-      border-radius: 6px;
-      transition: 0.4s;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-    .socials a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px #fff;
-      background: #ff0022;
+    h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    /* Coding Tip */
+    section.tips {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
     .tip-box {
-      margin: 30px auto; padding: 20px;
-      max-width: 600px;
-      background: rgba(0,0,0,0.5);
-      border-radius: 10px;
-      border-left: 5px solid #ff0;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-      animation: fadeInUp 1s ease;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Contact Section */
-    .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(5px);
-      margin-top: 30px;
-    }
-    .contact-section h2 {
-      font-size: 2rem; color: #fff;
-      text-shadow: 0 0 10px #ff0022;
-    }
-    .telegram-link {
-      font-size: 1.3rem; display: inline-block; color: #ff0;
-      text-decoration: none; margin-top: 10px;
-    }
-
-    /* FAB Button */
-    .fab-container {
-      position: fixed; bottom: 20px; right: 20px;
-      display: flex; flex-direction: column; gap: 8px;
-      align-items: center; z-index: 1000;
-    }
-    .fab-btn {
-      width: 55px; height: 55px; border-radius: 50%;
-      background: #ff0022; color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; cursor: pointer;
-      box-shadow: 0 0 15px #ff0022, 0 0 30px #ff0044;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #ff0022; }
-      50% { box-shadow: 0 0 25px #ff0044; }
-      100% { box-shadow: 0 0 10px #ff0022; }
-    }
-    .fab-links {
-      display: none; flex-direction: column; gap: 10px;
-    }
-    .fab-container.active .fab-links { display: flex; }
-
-    .fab-links a {
-      width: 45px; height: 45px; border-radius: 50%;
-      background-size: cover;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .fab-links .whatsapp { background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') center/cover no-repeat; background-color: white; }
-    .fab-links .instagram { background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') center/cover no-repeat; }
-    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: #0088cc; }
-
-    /* Scroll-to-top */
-    #scrollTopBtn {
-      position: fixed; bottom: 20px; right: 80px;
-      background: #ff0022; color: #fff;
-      border: none; padding: 12px 14px;
-      border-radius: 50%;
-      font-size: 20px; cursor: pointer;
-      box-shadow: 0 0 10px #ff0044;
-      display: none;
-      animation: pulse 2s infinite;
+      background: #e6f7ff;
+      border-left: 5px solid #87cefa;
+      display: inline-block;
+      padding: 1rem;
+      font-size: 1.2rem;
+      min-height: 60px;
+      transition: all 0.5s ease;
     }
 
     footer {
+      background: #87cefa;
+      color: white;
       text-align: center;
-      padding: 15px;
-      background: rgba(0,0,0,0.6);
-      border-top: 2px solid rgba(255,255,255,0.2);
-      margin-top: 30px;
-      font-size: 0.9rem;
-      color: #ffeaea;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      .tip-box {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="logo-text">AK Connects</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <header id="home">
-    <img src="logo.jpg" alt="AK Connects Logo" class="logo" />
+  <header>
     <h1>AK Connects</h1>
-    <p>Your guide for Interview Prep, Coding Challenges & Placement Success.</p>
-    <div class="typing-text" id="typingText"></div>
-    <div class="socials">
-      <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">WhatsApp</a>
-      <a href="https://t.me/RisingTeam1" target="_blank">Telegram</a>
-      <a href="https://www.instagram.com/akconnectsforyou1?igsh=djh3OWs0dDhsMmNz" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@coderrr27?si=4MTKbTv5Pin-2oMy" target="_blank">YouTube</a>
-    </div>
   </header>
 
-  <!-- Coding Tip -->
-  <div class="tip-box" id="codingTip"></div>
-
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <a href="https://t.me/Coderrr27" class="telegram-link" target="_blank">t.me/Coderrr27</a>
+  <section class="tips">
+    <h2>Daily Flowing Tips</h2>
+    <div class="tip-box" id="tipBox">Welcome to AK Connects!</div>
   </section>
 
-  <!-- Floating Button -->
-  <div class="fab-container" id="fab">
-    <div class="fab-links">
-      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank"></a>
-      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank"></a>
-      <a class="telegram" href="https://t.me/Coderrr27" target="_blank"></a>
-    </div>
-    <div class="fab-btn" onclick="toggleFab()">+</div>
-  </div>
-
-  <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
-
-  <!-- Footer -->
-  <footer>© 2025 AK Connects – Marvel Edition ✨</footer>
+  <footer>
+    <p>Contact: <a href="https://t.me/Coderrr27" style="color: white;">@Coderrr27</a></p>
+  </footer>
 
   <script>
-    // FAB
-    function toggleFab() {
-      document.getElementById('fab').classList.toggle('active');
-    }
-
-    // Scroll Button
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-    };
-    function scrollToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    // Typing Text
-    const textArray = ["Interview Help", "Coding Help", "Placement Exams", "Daily Tips"];
-    let textIndex = 0, charIndex = 0;
-    const typingText = document.getElementById("typingText");
-
-    function typeText() {
-      if (charIndex < textArray[textIndex].length) {
-        typingText.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, 100);
-      } else {
-        setTimeout(eraseText, 1500);
-      }
-    }
-    function eraseText() {
-      if (charIndex > 0) {
-        typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseText, 50);
-      } else {
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(typeText, 500);
-      }
-    }
-    document.addEventListener("DOMContentLoaded", () => typeText());
-
-    // Daily Coding Tip
     const tips = [
-      "Tip: Always use meaningful variable names for clean code.",
-      "Tip: Solve at least one DSA problem every day.",
-      "Tip: Learn the basics of SQL joins – they are often asked in interviews.",
-      "Tip: Write comments for complex logic in your code.",
-      "Tip: Practice mock interviews to boost your confidence."
+      "Revise DSA daily for better retention.",
+      "Practice mock interviews weekly.",
+      "Stay consistent with LeetCode/Codeforces.",
+      "Review past mistakes to avoid repeating.",
+      "Understand the problem before coding.",
+      "Write clean and readable code.",
+      "Use meaningful variable names.",
+      "Practice System Design basics.",
+      "Master SQL joins and queries.",
+      "Read job descriptions carefully.",
+      "Customize your resume for every role.",
+      "Build projects that solve real problems.",
+      "Use GitHub for portfolio visibility.",
+      "Learn basic OS, DBMS, and CN concepts.",
+      "Take breaks between study sessions.",
+      "Watch interview experiences on YouTube.",
+      "Use STAR format for HR questions.",
+      "Keep a study log to track progress.",
+      "Stay up-to-date with tech news.",
+      "Try participating in coding contests.",
+      "Explore company-specific coding patterns.",
+      "Build a personal brand website.",
+      "Know your resume inside-out.",
+      "Ask clarifying questions in interviews.",
+      "Prepare answers for 'Tell me about yourself'.",
+      "Practice explaining your projects aloud.",
+      "Join Telegram or Discord coding groups.",
+      "Maintain consistency, not perfection.",
+      "Focus more on quality than quantity.",
+      "Be honest about what you don’t know.",
+      "Keep learning new tools/libraries.",
+      "Prepare for behavioral questions too.",
+      "Mock interviews help a lot!",
+      "Revise key algorithms: BFS, DFS, DP, etc.",
+      "Document your project work.",
+      "Prepare 2–3 project stories in depth.",
+      "Use ChatGPT for practice prompts.",
+      "Timebox your prep hours daily.",
+      "Don’t compare yourself to others.",
+      "Take care of your mental health.",
+      "Stay humble and curious always.",
+      "Ask for referrals when applying.",
+      "Build a strong LinkedIn profile.",
+      "Practice explaining tech concepts simply.",
+      "Do open source contributions if possible.",
+      "Understand company culture before interview.",
+      "Revisit concepts before interviews.",
+      "Prepare 2–3 strength/weakness points.",
+      "Read interview feedbacks online.",
+      "Work on communication skills too.",
+      "Be confident, not overconfident."
     ];
-    document.getElementById("codingTip").textContent = tips[Math.floor(Math.random() * tips.length)];
+
+    let currentIndex = 0;
+    const tipBox = document.getElementById("tipBox");
+
+    function updateTip() {
+      tipBox.textContent = tips[currentIndex];
+      currentIndex = (currentIndex + 1) % tips.length;
+    }
+
+    setInterval(updateTip, 5000); // change tip every 5 seconds
+    updateTip(); // initial tip load
   </script>
+
 </body>
 </html>
 
