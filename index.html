@@ -55,30 +55,28 @@
     .socials a:hover { background: #00d4ff; color: #000; }
 
     /* Services Section */
-    .services-section { padding: 60px 20px; text-align: center; }
-    .services-section h2 { font-size: 2.2rem; color: #00d4ff; margin-bottom: 30px; }
-    .service-columns { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-    .service-column { flex: 1 1 250px; max-width: 300px; background: rgba(0,0,0,0.5);
-                      padding: 20px; border-radius: 10px; border: 1px solid #00d4ff;
+    .services-section { padding: 40px 20px; text-align: center; }
+    .services-section h2 { font-size: 2rem; color: #00d4ff; margin-bottom: 20px; }
+    .service-columns { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .service-column { flex: 1 1 200px; max-width: 250px; background: rgba(0,0,0,0.5);
+                      padding: 15px; border-radius: 8px; border: 1px solid #00d4ff;
                       transition: transform 0.3s, background 0.3s; cursor: pointer; }
-    .service-column:hover { transform: translateY(-5px); background: rgba(0,212,255,0.15); }
-    .service-column h3 { color: #00d4ff; margin-bottom: 10px; }
-    .service-details { display: none; font-size: 0.95rem; color: #ccc; margin-top: 10px; line-height: 1.5; }
-
-    /* Testimonials */
-    .testimonials { padding: 60px 20px; background: rgba(0,0,0,0.3); text-align: center; }
-    .testimonials h2 { color: #00d4ff; font-size: 2rem; margin-bottom: 20px; }
-    .testimonial-card { max-width: 500px; margin: 0 auto 20px; padding: 20px; background: rgba(255,255,255,0.05);
-                        border-radius: 10px; border: 1px solid #00d4ff; font-style: italic; color: #ddd; }
+    .service-column:hover { transform: translateY(-3px); background: rgba(0,212,255,0.15); }
+    .service-column h3 { color: #00d4ff; margin-bottom: 8px; font-size: 1rem; }
+    .service-details { display: none; font-size: 0.85rem; color: #ccc; margin-top: 8px; line-height: 1.4; }
 
     /* Contact */
-    .contact-section { padding: 60px 20px; text-align: center; }
-    .contact-section h2 { color: #00d4ff; font-size: 2rem; margin-bottom: 20px; }
-    form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-    form input, form textarea { padding: 10px; border: none; border-radius: 5px; font-size: 1rem; outline: none; }
-    form button { background: #00d4ff; border: none; padding: 12px; font-size: 1rem; border-radius: 5px; cursor: pointer;
-                  color: #000; transition: 0.3s; }
-    form button:hover { background: #00aacc; }
+    .contact-section { padding: 40px 20px; text-align: center; }
+    .contact-section h2 { color: #00d4ff; font-size: 2rem; margin-bottom: 10px; }
+
+    .telegram-link {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      display: inline-block;
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    .telegram-link:hover { color: #00aacc; }
 
     /* Scroll-to-Top Button */
     #scrollTopBtn {
@@ -98,13 +96,12 @@
     }
     #scrollTopBtn:hover { background: #00aacc; }
 
-    /* Footer */
-    .footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #aaa; }
-
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .service-columns { flex-direction: column; align-items: center; }
+      .service-column { max-width: 90%; padding: 10px; font-size: 0.9rem; }
+      .services-section h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -115,13 +112,10 @@
     <div class="nav-links">
       <a href="#home">Home</a>
       <a href="#services">Services</a>
-      <a href="#testimonials">Testimonials</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="hamburger" onclick="toggleSidebar()">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
   </nav>
 
@@ -129,7 +123,6 @@
   <div class="sidebar" id="sidebar">
     <a href="#home" onclick="toggleSidebar()">Home</a>
     <a href="#services" onclick="toggleSidebar()">Services</a>
-    <a href="#testimonials" onclick="toggleSidebar()">Testimonials</a>
     <a href="#contact" onclick="toggleSidebar()">Contact</a>
   </div>
 
@@ -165,31 +158,14 @@
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Users Say</h2>
-    <div class="testimonial-card">"AK Connects helped me crack my first interview with their mock sessions!"</div>
-    <div class="testimonial-card">"Their coding challenges improved my problem-solving speed by 2x."</div>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-    <form name="contact" method="POST" data-netlify="true">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <a href="https://t.me/Coderrr27" class="telegram-link" target="_blank">t.me/Coderrr27</a>
   </section>
 
   <!-- Scroll-to-Top Button -->
   <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
-
-  <!-- Footer -->
-  <div class="footer">
-    © 2025 AK Connects – Made with ❤ | Built by Ajay Kumar
-  </div>
 
   <script>
     function toggleService(index) {
