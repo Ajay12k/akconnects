@@ -1,324 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AK Connects – Premium Master Edition with 50 Live Tips." />
-  <title>AK Connects – Master Edition</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AK Connects</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: #ff4d4d;
+      --bg-color: #ffffff;
+      --text-color: #333;
+      --accent-color: #f2f2f2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(-45deg, #ffffff, #f6f6f6, #ffffff);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      color: #333;
-      overflow-x: hidden;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
-    /* Navigation */
-    nav {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 25px;
-      background: rgba(255,255,255,0.85);
-      backdrop-filter: blur(6px);
-      border-bottom: 2px solid rgba(200,0,0,0.2);
-    }
-    nav .logo-text {
-      font-size: 1.8rem; font-weight: 700;
-      color: #b80000;
-    }
-    nav .nav-links a {
-      color: #444; text-decoration: none; margin: 0 12px;
-      position: relative; transition: 0.3s;
-    }
-    nav .nav-links a:hover {
-      color: #b80000;
-    }
-
-    /* Hero Section */
     header {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
       text-align: center;
-      padding: 80px 20px 40px;
-    }
-    header img.logo {
-      width: 150px; border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      animation: floatLogo 3s ease-in-out infinite;
-    }
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    header h1 {
-      font-size: 2.6rem;
-      color: #b80000;
-      margin: 20px 0 10px;
-    }
-    .typing-text {
-      font-size: 1.3rem;
-      margin-top: 15px;
-      color: #444;
+      font-size: 1.8rem;
+      font-weight: bold;
     }
 
-    /* Social Links */
-    .socials {
-      margin-top: 20px;
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-    }
-    .socials a {
-      text-decoration: none;
-      padding: 10px 18px;
-      color: #fff;
-      background: #b80000;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    .socials a:hover {
-      background: #800000;
-      transform: scale(1.05);
+    section.tips {
+      margin: 2rem auto;
+      max-width: 600px;
+      background: var(--accent-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
     }
 
-    /* Tips Rotator */
-    .tip-box {
-      margin: 30px auto;
-      padding: 15px 20px;
-      background: rgba(255,255,255,0.9);
-      border-left: 5px solid #b80000;
-      border-radius: 8px;
-      max-width: 650px;
-      color: #333;
+    section.tips h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    section.tips p {
       font-size: 1.1rem;
-      text-align: center;
-      min-height: 40px;
-      opacity: 0;
-      transition: opacity 1s ease;
+      transition: all 0.3s ease;
     }
 
-    /* Contact */
-    .contact-section {
-      padding: 40px 20px;
-      text-align: center;
-      background: rgba(255,255,255,0.9);
-      border-top: 2px solid rgba(0,0,0,0.1);
+    .social-icons {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
-    .contact-section h2 {
-      font-size: 2rem;
-      color: #b80000;
-    }
-    .telegram-link {
-      font-size: 1.2rem;
-      color: #444;
+
+    .social-icons a {
+      color: var(--primary-color);
+      font-size: 1.8rem;
       text-decoration: none;
+      transition: transform 0.3s;
     }
-    .telegram-link:hover { color: #b80000; }
 
-    /* FAB Button */
-    .fab-container {
-      position: fixed; bottom: 20px; right: 20px;
-      display: flex; flex-direction: column; gap: 8px;
-      align-items: center; z-index: 1000;
-    }
-    .fab-btn {
-      width: 55px; height: 55px; border-radius: 50%;
-      background: #b80000; color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .fab-links { display: none; flex-direction: column; gap: 10px; }
-    .fab-container.active .fab-links { display: flex; }
-    .fab-links a {
-      width: 45px; height: 45px; border-radius: 50%;
-      background-size: cover;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .fab-links .whatsapp { background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') center/cover no-repeat; background-color: white; }
-    .fab-links .instagram { background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') center/cover no-repeat; }
-    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: #0088cc; }
-
-    /* Scroll-to-top */
-    #scrollTopBtn {
-      position: fixed; bottom: 20px; right: 80px;
-      background: #b80000; color: #fff;
-      border: none; padding: 12px;
-      border-radius: 50%;
-      font-size: 18px; cursor: pointer;
-      display: none;
+    .social-icons a:hover {
+      transform: scale(1.2);
     }
 
     footer {
+      margin-top: 3rem;
       text-align: center;
-      padding: 15px;
-      background: rgba(255,255,255,0.9);
-      font-size: 0.9rem;
-      color: #555;
+      font-size: 1rem;
+      color: var(--text-color);
+      background-color: var(--accent-color);
+      padding: 1rem;
     }
   </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <div class="logo-text">AK Connects</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <header id="home">
-    <img src="logo.jpg" alt="AK Connects Logo" class="logo" />
-    <h1>AK Connects</h1>
-    <div class="typing-text" id="typingText"></div>
-    <div class="socials">
-      <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">WhatsApp</a>
-      <a href="https://t.me/RisingTeam1" target="_blank">Telegram</a>
-      <a href="https://www.instagram.com/akconnectsforyou1?igsh=djh3OWs0dDhsMmNz" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@coderrr27?si=4MTKbTv5Pin-2oMy" target="_blank">YouTube</a>
-    </div>
+<body>
+  <header>
+    Welcome to AK Connects
   </header>
 
-  <!-- Live Tips -->
-  <div class="tip-box" id="liveTip"></div>
-
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <a href="https://t.me/Coderrr27" class="telegram-link" target="_blank">t.me/Coderrr27</a>
+  <section class="tips">
+    <h2>🔥 Daily Tips & Tricks</h2>
+    <p id="tipBox">Loading...</p>
   </section>
 
-  <!-- Floating Button -->
-  <div class="fab-container" id="fab">
-    <div class="fab-links">
-      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank"></a>
-      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank"></a>
-      <a class="telegram" href="https://t.me/Coderrr27" target="_blank"></a>
-    </div>
-    <div class="fab-btn" onclick="toggleFab()">+</div>
+  <div class="social-icons">
+    <a href="https://t.me/Coderrr27" target="_blank">Telegram</a>
+    <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
   </div>
 
-  <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
-
-  <footer>© 2025 AK Connects – Master Edition</footer>
+  <footer>
+    Powered by @Coderrr27 | Crafted with ❤️
+  </footer>
 
   <script>
-    // FAB
-    function toggleFab() {
-      document.getElementById('fab').classList.toggle('active');
-    }
-
-    // Scroll Button
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-    };
-    function scrollToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    // Typing Text
-    const textArray = ["Interview Help", "Coding Help", "Placement Exams", "Daily Tips"];
-    let textIndex = 0, charIndex = 0;
-    const typingText = document.getElementById("typingText");
-
-    function typeText() {
-      if (charIndex < textArray[textIndex].length) {
-        typingText.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, 100);
-      } else {
-        setTimeout(eraseText, 1500);
-      }
-    }
-    function eraseText() {
-      if (charIndex > 0) {
-        typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseText, 50);
-      } else {
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(typeText, 500);
-      }
-    }
-    document.addEventListener("DOMContentLoaded", () => typeText());
-
-    // Live Tips (50 tips)
     const tips = [
-      "Tip 1: Solve at least one DSA problem daily.",
-      "Tip 2: Use meaningful variable names.",
-      "Tip 3: Write clean, modular code.",
-      "Tip 4: Revise coding patterns weekly.",
-      "Tip 5: Learn SQL joins and indexing.",
-      "Tip 6: Practice mock interviews.",
-      "Tip 7: Keep your resume concise.",
-      "Tip 8: Master 10-15 coding patterns.",
-      "Tip 9: Focus on problem-solving speed.",
-      "Tip 10: Revise frequently asked coding questions.",
-      "Tip 11: Practice system design basics.",
-      "Tip 12: Solve easy to hard LeetCode problems.",
-      "Tip 13: Stay consistent with learning.",
-      "Tip 14: Revise CS fundamentals weekly.",
-      "Tip 15: Learn OOPs concepts thoroughly.",
-      "Tip 16: Use Git for version control.",
-      "Tip 17: Practice SQL queries daily.",
-      "Tip 18: Optimize your code with time complexity.",
-      "Tip 19: Learn Python or Java basics well.",
-      "Tip 20: Understand arrays and strings deeply.",
-      "Tip 21: Prepare short self-introduction.",
-      "Tip 22: Read about STAR interview method.",
-      "Tip 23: Know 2-3 projects deeply.",
-      "Tip 24: Revise database normalization.",
-      "Tip 25: Understand REST APIs.",
-      "Tip 26: Prepare top 50 HR questions.",
-      "Tip 27: Learn about data structures like stack & queue.",
-      "Tip 28: Practice competitive coding weekly.",
-      "Tip 29: Keep a portfolio site ready.",
-      "Tip 30: Learn basic cloud concepts.",
-      "Tip 31: Understand Agile methodology.",
-      "Tip 32: Learn one front-end framework.",
-      "Tip 33: Review common coding patterns.",
-      "Tip 34: Join mock group discussions.",
-      "Tip 35: Focus on problem-solving, not just syntax.",
-      "Tip 36: Maintain code readability.",
-      "Tip 37: Revise OS concepts like deadlock.",
-      "Tip 38: Learn DB indexing and query plans.",
-      "Tip 39: Practice binary search variants.",
-      "Tip 40: Solve sliding window problems.",
-      "Tip 41: Master recursion and backtracking.",
-      "Tip 42: Learn graph algorithms (BFS/DFS).",
-      "Tip 43: Solve dynamic programming basics.",
-      "Tip 44: Learn about hashing and sets.",
-      "Tip 45: Revise sorting algorithms.",
-      "Tip 46: Do mock system design sessions.",
-      "Tip 47: Keep LinkedIn updated.",
-      "Tip 48: Learn about CI/CD basics.",
-      "Tip 49: Focus on communication in interviews.",
-      "Tip 50: Revise all placement previous papers."
+      "Stay consistent with your learning.",
+      "Solve one coding problem every day.",
+      "Practice mock interviews regularly.",
+      "Keep your resume updated.",
+      "Focus on problem-solving patterns.",
+      "Contribute to open-source projects.",
+      "Use GitHub to showcase your code.",
+      "Document your projects clearly.",
+      "Stay active on LinkedIn.",
+      "Build a personal brand.",
+      "Practice system design questions.",
+      "Master data structures and algorithms.",
+      "Learn a backend framework.",
+      "Get comfortable with APIs.",
+      "Use version control in all projects.",
+      "Follow tech news and trends.",
+      "Attend hackathons and meetups.",
+      "Build portfolio projects that solve real problems.",
+      "Ask for feedback often.",
+      "Refactor old code.",
+      "Automate daily tasks.",
+      "Write clean, readable code.",
+      "Use proper naming conventions.",
+      "Write unit tests.",
+      "Understand how the web works.",
+      "Master at least one programming language.",
+      "Stay curious.",
+      "Don’t fear rejection, keep applying.",
+      "Work on soft skills.",
+      "Improve communication.",
+      "Solve LeetCode challenges.",
+      "Use debugging tools effectively.",
+      "Learn SQL and database design.",
+      "Try freelance projects.",
+      "Understand cloud basics.",
+      "Familiarize with DevOps tools.",
+      "Practice time management.",
+      "Always backup your work.",
+      "Use Notion or Trello for planning.",
+      "Understand OS fundamentals.",
+      "Stay motivated through setbacks.",
+      "Build a blog.",
+      "Try pair programming.",
+      "Understand MVC architecture.",
+      "Learn to read documentation.",
+      "Keep your learning fun!",
+      "Get familiar with interview platforms.",
+      "Work on mini projects weekly.",
+      "Stay humble and hungry.",
+      "Teach others what you learn.",
+      "Record videos explaining code.",
+      "Make study groups.",
+      "Practice typing speed.",
+      "Challenge yourself with deadlines.",
+      "Learn design patterns.",
+      "Avoid tutorial hell.",
+      "Track your progress.",
+      "Try reverse engineering apps.",
+      "Start with small goals.",
+      "Celebrate small wins.",
+      "Use ChatGPT for learning support.",
+      "Ask doubts, never hesitate.",
+      "Break problems into parts.",
+      "Debug systematically.",
+      "Comment complex code.",
+      "Practice whiteboard coding.",
+      "Learn regex.",
+      "Try public speaking.",
+      "Always be building.",
+      "Design resumes smartly.",
+      "Network with alumni.",
+      "Use light/dark mode smartly.",
+      "Explore AI tools.",
+      "Be ethical in coding.",
+      "Avoid burnout.",
+      "Read others’ code.",
+      "Use keyboard shortcuts.",
+      "Join tech Discord servers.",
+      "Update your LinkedIn bio.",
+      "Create a coding calendar.",
+      "Learn Docker basics.",
+      "Follow startup culture.",
+      "Prepare HR answers.",
+      "Ace behavioral rounds.",
+      "Master GIT operations.",
+      "Mock projects like ecommerce site.",
+      "Track your hours using tools.",
+      "Read career blogs.",
+      "Design UI smartly.",
+      "Use Figma/Canva.",
+      "Stay organized.",
+      "Practice memory techniques.",
+      "Apply for internships.",
+      "Create personal portfolio site.",
+      "Write README files.",
+      "Make use of free courses.",
+      "Keep learning forever.",
+      "Use Pomodoro technique.",
+      "Take healthy breaks.",
+      "Love what you do!"
     ];
-    let tipIndex = 0;
-    const liveTip = document.getElementById("liveTip");
 
-    function showTip() {
-      liveTip.style.opacity = 0;
-      setTimeout(() => {
-        liveTip.textContent = tips[tipIndex];
-        liveTip.style.opacity = 1;
-        tipIndex = (tipIndex + 1) % tips.length;
-      }, 500);
+    const tipBox = document.getElementById('tipBox');
+    let index = 0;
+
+    function showNextTip() {
+      tipBox.textContent = tips[index];
+      index = (index + 1) % tips.length;
     }
-    setInterval(showTip, 3000);
-    showTip();
+
+    showNextTip();
+    setInterval(showNextTip, 5000); // Change tip every 5 seconds
   </script>
 </body>
+
 </html>
+
