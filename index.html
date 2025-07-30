@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AK Connects – Marvel Edition</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25231.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AK Connects For You</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6ad66.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="loader-wrapper" id="loader">
-    <div class="loader"></div>
-  </div>
 
+  <!-- Loader -->
+  <div id="loader"></div>
+
+  <!-- Header -->
   <header>
-    <img src="akconnectslogo.png" alt="AK Connects Logo" class="logo">
+    <h1>⚡ AK Connects For You</h1>
   </header>
 
-  <main>
-    <section>
-      <h1>Welcome to AK Connects</h1>
-      <p>Experience the Marvel edition with stunning UI and animations!</p>
-    </section>
-  </main>
+  <!-- Tips Section -->
+  <section class="tips">
+    <h2>Tips & Resources</h2>
+    <p>Follow us on your favorite platform for more updates!</p>
+    <div class="icon-row">
+      <a href="https://t.me/akconnects" target="_blank" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://wa.me/1234567890" target="_blank" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@akconnects" target="_blank" class="icon youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/akconnects" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
 
-  <div class="fab">
-    <div class="fab-main">+</div>
-    <div class="fab-links">
-      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank" title="WhatsApp"></a>
-      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank" title="Instagram"></a>
-      <a class="telegram" href="https://t.me/Coderrr27" target="_blank" title="Telegram"></a>
-      <a class="youtube" href="https://youtube.com/@coderrr27" target="_blank" title="YouTube"></a>
+  <!-- Floating Action Button -->
+  <div class="fab-container">
+    <button class="fab-main" onclick="toggleFAB()">+</button>
+    <div class="fab-icons">
+      <a href="https://t.me/akconnects" target="_blank" class="fab-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://wa.me/1234567890" target="_blank" class="fab-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@akconnects" target="_blank" class="fab-icon youtube"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com/akconnects" target="_blank" class="fab-icon instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 
