@@ -1,314 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="AK Connects For You – Premium Edition with stunning UI and animations." />
-  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AK Connects – Marvel Edition</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #1a0033 100%);
-      color: white;
-      overflow-x: hidden;
-    }
-
-    nav {
-      position: sticky; top: 0; z-index: 1000;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 15px 25px;
-      background: #000;
-      border-bottom: 2px solid #8a2be2;
-    }
-
-    nav .logo-text {
-      font-size: 1.8rem; font-weight: bold;
-      color: #8a2be2;
-    }
-
-    nav .nav-links a {
-      color: white;
-      text-decoration: none; margin: 0 12px;
-      position: relative;
-      font-weight: bold;
-    }
-    nav .nav-links a::after {
-      content: ''; position: absolute; bottom: -5px; left: 0;
-      width: 0; height: 2px; background: #8a2be2; transition: 0.3s;
-    }
-    nav .nav-links a:hover::after { width: 100%; }
-
-    header {
-      text-align: center;
-      padding: 100px 20px 60px;
-    }
-
-    header img.logo {
-      width: 160px; border-radius: 20px;
-      max-width: 100%;
-      height: auto;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
-      animation: floatLogo 3s ease-in-out infinite;
-    }
-
-    @keyframes floatLogo {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: #fff;
-      margin-top: 20px;
-    }
-
-    .typing-text {
-      font-size: 1.3rem; margin-top: 15px;
-      color: #8a2be2;
-    }
-    .typing-text::after {
-      content: '|';
-      animation: blink 0.8s infinite;
-    }
-    @keyframes blink {
-      0%, 50% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
-
-    .socials {
-      margin-top: 25px;
-      display: flex; gap: 12px; justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .socials a {
-      text-decoration: none; padding: 10px 16px;
-      color: white;
-      background: #8a2be2;
-      border-radius: 6px;
-      transition: 0.4s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.1);
-      background: white;
-      color: #000;
-    }
-
-    .tip-box {
-      margin: 30px auto; padding: 20px;
-      max-width: 600px;
-      background: #1a1a1a;
-      border-left: 5px solid #8a2be2;
-      border-radius: 10px;
-      font-weight: bold;
-      color: #e5e5ff;
-      box-shadow: 0 0 10px rgba(138,43,226,0.4);
-    }
-
-    .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-      background: #000;
-      margin-top: 30px;
-    }
-
-    .contact-section h2 {
-      font-size: 2rem; color: white;
-    }
-
-    .telegram-link {
-      font-size: 1.3rem;
-      display: inline-block;
-      color: #8a2be2;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-
-    .fab-container {
-      position: fixed; bottom: 20px; right: 20px;
-      display: flex; flex-direction: column; gap: 8px;
-      align-items: center; z-index: 1000;
-    }
-
-    .fab-btn {
-      width: 55px; height: 55px; border-radius: 50%;
-      background: #8a2be2; color: white;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; cursor: pointer;
-      box-shadow: 0 0 10px #8a2be2;
-    }
-
-    .fab-links { display: none; flex-direction: column; gap: 6px; }
-    .fab-container.active .fab-links { display: flex; }
-
-    .fab-links a {
-      width: 45px; height: 45px; border-radius: 50%;
-      background-size: cover;
-      display: flex; align-items: center; justify-content: center;
-    }
-
-    .fab-links .whatsapp { background: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg') center/cover no-repeat; background-color: white; }
-    .fab-links .instagram { background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') center/cover no-repeat; }
-    .fab-links .telegram { background: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg') center/cover no-repeat; background-color: white; }
-    .fab-links .youtube { background: url('https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png') center/cover no-repeat; background-color: white; }
-
-    #scrollTopBtn {
-      position: fixed; bottom: 20px; right: 80px;
-      background: #8a2be2; color: white;
-      border: none; padding: 12px 14px;
-      border-radius: 50%;
-      font-size: 20px; cursor: pointer;
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    /* Loader styles */
-    #loader {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
-
-    #loader div {
-      width: 40px; height: 40px;
-      border: 5px solid #8a2be2;
-      border-top: 5px solid transparent;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/25/25231.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader"><div></div></div>
+  <div class="loader-wrapper" id="loader">
+    <div class="loader"></div>
+  </div>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo-text">AK Connects</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header id="home">
-    <img src="logo.jpg" alt="AK Connects Logo" class="logo" />
-    <h1>AK Connects</h1>
-    <div class="typing-text" id="typingText"></div>
-    <div class="socials">
-      <a href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank">WhatsApp</a>
-      <a href="https://t.me/RisingTeam1" target="_blank">Telegram</a>
-      <a href="https://www.instagram.com/akconnectsforyou1" target="_blank">Instagram</a>
-      <a href="https://youtube.com/@coderrr27" target="_blank">YouTube</a>
-    </div>
+  <header>
+    <img src="akconnectslogo.png" alt="AK Connects Logo" class="logo">
   </header>
 
-  <!-- Coding Tip -->
-  <div class="tip-box" id="codingTip"></div>
+  <main>
+    <section>
+      <h1>Welcome to AK Connects</h1>
+      <p>Experience the Marvel edition with stunning UI and animations!</p>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <h2>Contact Us</h2>
-    <a href="https://t.me/Coderrr27" class="telegram-link" target="_blank">t.me/Coderrr27</a>
-  </section>
-
-  <!-- Floating Button -->
-  <div class="fab-container" id="fab">
+  <div class="fab">
+    <div class="fab-main">+</div>
     <div class="fab-links">
       <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank" title="WhatsApp"></a>
       <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank" title="Instagram"></a>
       <a class="telegram" href="https://t.me/Coderrr27" target="_blank" title="Telegram"></a>
       <a class="youtube" href="https://youtube.com/@coderrr27" target="_blank" title="YouTube"></a>
     </div>
-    <div class="fab-btn" onclick="toggleFab()">+</div>
   </div>
 
-  <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
-
-  <!-- Footer -->
-  <footer>© 2025 AK Connects – AK Edition ✨</footer>
-
-  <script>
-    // Loader hide
-    window.addEventListener('load', () => {
-      document.getElementById('loader').style.display = 'none';
-    });
-
-    function toggleFab() {
-      document.getElementById('fab').classList.toggle('active');
-    }
-
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      scrollBtn.style.display = (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) ? "block" : "none";
-    };
-
-    function scrollToTop() {
-      window.scrollTo({top: 0, behavior: 'smooth'});
-    }
-
-    const textArray = ["Interview Help", "Coding Help", "Placement Exams", "Daily Tips"];
-    let textIndex = 0, charIndex = 0;
-    const typingText = document.getElementById("typingText");
-
-    function typeText() {
-      if (charIndex < textArray[textIndex].length) {
-        typingText.textContent += textArray[textIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, 100);
-      } else {
-        setTimeout(eraseText, 1500);
-      }
-    }
-
-    function eraseText() {
-      if (charIndex > 0) {
-        typingText.textContent = textArray[textIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseText, 50);
-      } else {
-        textIndex = (textIndex + 1) % textArray.length;
-        setTimeout(typeText, 500);
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => typeText());
-
-    const tips = [
-      "Tip: Use clear, meaningful variable names.",
-      "Tip: Practice 1 DSA problem daily.",
-      "Tip: Review SQL joins before interviews.",
-      "Tip: Comment on tricky logic.",
-      "Tip: Mock interviews improve confidence."
-    ];
-    document.getElementById("codingTip").textContent = tips[Math.floor(Math.random() * tips.length)];
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
