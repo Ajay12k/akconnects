@@ -4,12 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="AK Connects For You – Premium Edition with stunning UI and animations." />
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
   <title>AK Connects – Marvel Edition</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      background: linear-gradient(135deg, #000000 0%, #1a0033 100%);
       color: white;
       overflow-x: hidden;
     }
@@ -46,6 +52,8 @@
 
     header img.logo {
       width: 160px; border-radius: 20px;
+      max-width: 100%;
+      height: auto;
       box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
       animation: floatLogo 3s ease-in-out infinite;
     }
@@ -168,9 +176,37 @@
       font-size: 0.9rem;
       color: #bbb;
     }
+
+    /* Loader styles */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    #loader div {
+      width: 40px; height: 40px;
+      border: 5px solid #8a2be2;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
+  <!-- Loader -->
+  <div id="loader"><div></div></div>
+
   <!-- Navigation -->
   <nav>
     <div class="logo-text">AK Connects</div>
@@ -205,10 +241,10 @@
   <!-- Floating Button -->
   <div class="fab-container" id="fab">
     <div class="fab-links">
-      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank"></a>
-      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank"></a>
-      <a class="telegram" href="https://t.me/Coderrr27" target="_blank"></a>
-      <a class="youtube" href="https://youtube.com/@coderrr27" target="_blank"></a> <!-- New -->
+      <a class="whatsapp" href="https://whatsapp.com/channel/0029VajzGzm0lwgwDeIdoi3v" target="_blank" title="WhatsApp"></a>
+      <a class="instagram" href="https://www.instagram.com/akconnectsforyou1" target="_blank" title="Instagram"></a>
+      <a class="telegram" href="https://t.me/Coderrr27" target="_blank" title="Telegram"></a>
+      <a class="youtube" href="https://youtube.com/@coderrr27" target="_blank" title="YouTube"></a>
     </div>
     <div class="fab-btn" onclick="toggleFab()">+</div>
   </div>
@@ -220,6 +256,11 @@
   <footer>© 2025 AK Connects – AK Edition ✨</footer>
 
   <script>
+    // Loader hide
+    window.addEventListener('load', () => {
+      document.getElementById('loader').style.display = 'none';
+    });
+
     function toggleFab() {
       document.getElementById('fab').classList.toggle('active');
     }
