@@ -1,108 +1,81 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
   text-align: center;
+  padding-top: 50px;
 }
 
-nav {
-  background-color: #111;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header h1 {
+  font-size: 2em;
+  color: #222;
 }
 
-.logo-text {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #ffcc00;
-}
-
-.nav-links a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-header {
-  padding: 50px 20px;
-}
-
-.logo {
-  width: 100px;
-  border-radius: 50%;
-}
-
-.socials a {
-  display: inline-block;
+.social-icons img {
+  width: 40px;
   margin: 10px;
-  color: #00ffcc;
-  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
 }
 
-.tip-box {
-  margin: 20px auto;
-  padding: 15px;
-  max-width: 500px;
-  background: #222;
-  border: 1px solid #555;
-  border-radius: 10px;
-}
-
-.contact-section {
-  background: #111;
-  padding: 40px 0;
+.tips {
+  margin-top: 30px;
+  font-size: 1.3em;
+  color: #444;
 }
 
 .fab-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 10px;
 }
 
-.fab-btn {
-  background: #ffcc00;
-  color: black;
+.fab {
+  background-color: #007bff;
+  color: white;
+  border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
   cursor: pointer;
-  line-height: 50px;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s;
+}
+.fab:hover {
+  background-color: #0056b3;
 }
 
-.fab-links a {
-  display: block;
-  margin: 5px 0;
+.fab-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.fab-menu.show {
+  display: flex;
+  animation: slideUp 0.3s ease;
+}
+
+.fab-menu a img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-size: cover;
 }
 
-.fab-links .whatsapp    { background-image: url('whatsapp.png'); }
-.fab-links .instagram   { background-image: url('insta.png'); }
-.fab-links .telegram    { background-image: url('telegram.png'); }
-.fab-links .youtube     { background-image: url('yt.png'); }
-
-#scrollTopBtn {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  padding: 10px;
-  background: #00ffcc;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
-footer {
-  margin-top: 50px;
-  padding: 20px;
-  background: #111;
-  color: #888;
-}
-
