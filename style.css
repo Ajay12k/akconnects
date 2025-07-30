@@ -1,105 +1,108 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
-  color: #333;
-  padding: 20px;
-  transition: background 0.3s ease-in-out;
-}
-
-/* Loader */
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#loader::after {
-  content: "AK";
-  font-size: 3rem;
-  color: #0077ff;
-  animation: bounce 1.2s infinite;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Header */
-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #004080;
-}
-
-/* Section */
-.tips {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
   text-align: center;
 }
-.tips h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-}
-.icon-row {
-  margin-top: 15px;
-}
-.icon {
-  margin: 0 10px;
-  font-size: 2rem;
-  color: #555;
-  transition: transform 0.3s, color 0.3s;
-}
-.icon:hover {
-  transform: scale(1.2);
-}
-.telegram { color: #0088cc; }
-.whatsapp { color: #25d366; }
-.youtube { color: #ff0000; }
-.instagram { color: #e1306c; }
 
-/* Floating Action Button */
+nav {
+  background-color: #111;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffcc00;
+}
+
+.nav-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+header {
+  padding: 50px 20px;
+}
+
+.logo {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.socials a {
+  display: inline-block;
+  margin: 10px;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.tip-box {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 500px;
+  background: #222;
+  border: 1px solid #555;
+  border-radius: 10px;
+}
+
+.contact-section {
+  background: #111;
+  padding: 40px 0;
+}
+
 .fab-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
-.fab-main {
-  background-color: #004080;
-  color: #fff;
-  border: none;
-  font-size: 1.8rem;
-  padding: 15px;
+
+.fab-btn {
+  background: #ffcc00;
+  color: black;
   border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-}
-.fab-icons {
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-.fab-icon {
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
+  line-height: 50px;
   text-align: center;
-  font-size: 1.4rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
 }
-.fab-icon:hover {
-  transform: scale(1.2);
+
+.fab-links a {
+  display: block;
+  margin: 5px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
 }
+
+.fab-links .whatsapp    { background-image: url('whatsapp.png'); }
+.fab-links .instagram   { background-image: url('insta.png'); }
+.fab-links .telegram    { background-image: url('telegram.png'); }
+.fab-links .youtube     { background-image: url('yt.png'); }
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  padding: 10px;
+  background: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  background: #111;
+  color: #888;
+}
+
