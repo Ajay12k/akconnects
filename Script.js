@@ -1,18 +1,30 @@
-function toggleFAB() {
-  const menu = document.getElementById("fabMenu");
-  menu.classList.toggle("show");
+// Typing animation
+const text = "Welcome to AKConnectsForYou – One Stop For All Resources!";
+let index = 0;
+function type() {
+  document.getElementById("typingText").textContent = text.slice(0, ++index);
+  if (index < text.length) setTimeout(type, 100);
+}
+type();
+
+// Floating Action Button toggle
+function toggleFab() {
+  const fabLinks = document.querySelector(".fab-links");
+  fabLinks.style.display = fabLinks.style.display === "block" ? "none" : "block";
 }
 
+// Scroll-to-top button
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Random Tip Generator with numbering
 const tips = [
-  "Tip 1: Stay consistent and stay connected!",
-  "Tip 2: Follow on social media for updates!",
-  "Tip 3: Share with your friends!",
-  "Tip 4: Keep learning something new daily!"
+  "Use version control like Git to manage your code.",
+  "Break problems into smaller chunks before coding.",
+  "Practice DSA regularly to ace interviews.",
+  "Always write clean and readable code.",
+  "Keep learning new technologies every week."
 ];
-
-let tipIndex = 0;
-
-setInterval(() => {
-  tipIndex = (tipIndex + 1) % tips.length;
-  document.getElementById("tipText").innerText = tips[tipIndex];
-}, 4000);
+const randomTip = tips[Math.floor(Math.random() * tips.length)];
+document.getElementById("codingTip").textContent = "Tip " + (tips.indexOf(randomTip) + 1) + ": " + randomTip;
