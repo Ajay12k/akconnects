@@ -29,3 +29,9 @@ const tips = [
 const randomTip = tips[Math.floor(Math.random() * tips.length)];
 document.getElementById("codingTip").textContent =
   "Tip " + (tips.indexOf(randomTip) + 1) + ": " + randomTip;
+<script>
+  function toggleFabMenu() {
+    const menu = document.querySelector('.fab-menu');
+    menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
