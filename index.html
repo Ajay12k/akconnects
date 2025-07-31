@@ -1,3 +1,4 @@
+<!-- ✅ Existing HTML with FAB FIXED -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +50,58 @@
 
   <footer>© 2025 AKConnectsForYou – AK Edition ✨</footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Typing animation
+    const text = "Welcome to AKConnectsForYou – One Stop For All Resources!";
+    let index = 0;
+    function type() {
+      document.getElementById("typingText").textContent = text.slice(0, ++index);
+      if (index < text.length) setTimeout(type, 100);
+    }
+    type();
+
+    // FAB toggle
+    function toggleFab() {
+      const fabLinks = document.querySelector(".fab-links");
+      fabLinks.classList.toggle("show");
+    }
+
+    // Scroll-to-top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Random Tip
+    const tips = [
+      "Use version control like Git to manage your code.",
+      "Break problems into smaller chunks before coding.",
+      "Practice DSA regularly to ace interviews.",
+      "Always write clean and readable code.",
+      "Keep learning new technologies every week."
+    ];
+    const randomTip = tips[Math.floor(Math.random() * tips.length)];
+    document.getElementById("codingTip").textContent = "Tip " + (tips.indexOf(randomTip) + 1) + ": " + randomTip;
+
+    // Show scroll-to-top only on scroll
+    window.onscroll = function () {
+      const btn = document.getElementById("scrollTopBtn");
+      btn.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+  </script>
+
+  <style>
+    .fab-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      bottom: 60px;
+      right: 0;
+      z-index: 1000;
+    }
+    .fab-links.show {
+      display: flex;
+    }
+  </style>
 </body>
 </html>
-
