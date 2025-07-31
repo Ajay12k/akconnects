@@ -27,4 +27,5 @@ const tips = [
   "Keep learning new technologies every week."
 ];
 const randomTip = tips[Math.floor(Math.random() * tips.length)];
-document.getElementById("codingTip").textContent = "Tip " + (tips.indexOf(randomTip) + 1) + ": " + randomTip;
+document.getElementById("codingTip").textContent =
+  "Tip " + (tips.indexOf(randomTip) + 1) + ": " + randomTip;
